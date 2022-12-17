@@ -52,7 +52,7 @@ if authentication_status == True:
 
 
     if menu == "Accueil":
-        st.subheader(f" Bienvenue à la Bibliothèque de {Charpenne}")
+        st.title(f" Bienvenue à la Bibliothèque de {Charpenne}")
         st.write("Que souhaitez-vous faire ?")
         st.write("Pour cela, utilisez le menu à gauche.")
 
@@ -115,8 +115,13 @@ if authentication_status == True:
 
 
     if menu == "Rechercher un livre":
-        st.subheader("📚 Rechercher un livre 📚")
-        pass
+        try:
+            st.title('Rechercher un livre 📚')
+            search = st.text_input('Entrer le titre du livre:')
+            name.rechercher_livre(Charpenne, search)
+        except:
+            st.error("😶‍🌫️ Ce livre n'existe pas dans la bibliothèque.")
+
 
     if menu == "Noter un livre":
         st.subheader("📚 Noter un livre 📚")
@@ -124,7 +129,7 @@ if authentication_status == True:
 
 
     if menu == "Afficher les livres de la Bu":
-        st.subheader("📚 Afficher les livres 📚")
+        st.title("📚 Afficher les livres 📚")
         st.write("Voici la liste des livres de la bibliothèque de Charpenne: ")
         st.table(Charpenne.livres)
         st.success("Un 📖 vous plairait-il ?")
