@@ -116,9 +116,11 @@ if authentication_status == True:
 
     if menu == "Rechercher un livre":
         try:
+
             st.title('Rechercher un livre 📚')
             search = st.text_input('Entrer le titre du livre:')
             name.rechercher_livre(Charpenne, search)
+
         except:
             st.error("😶‍🌫️ Ce livre n'existe pas dans la bibliothèque.")
 

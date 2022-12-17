@@ -215,14 +215,7 @@ class Utilisateurs:
         :param livre: Livres
         :type livre: Livres
         """
-        if self.statut == "admin":
-            if livre in bibliotheque.livres:
-                bibliotheque.livres.remove(livre)
-                print(f"{livre.nom} a été supprimé de la collection de la bibliothèque: {bibliotheque.nom} !")
-            else:
-                print(f"{bibliotheque.nom} ne possède pas {livre.nom}!")
-        else:
-            print("🛑 Vous n'avez pas le droit de supprimer un livre de la bibliothèque !")
+
 
     def rechercher_livre(self, bibliotheque: Bibliotheque, titre: str):
         """
