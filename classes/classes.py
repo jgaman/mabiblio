@@ -240,7 +240,7 @@ class Utilisateurs:
             if titre in livre.titre:
                 return livre
             else:
-                print(f"🤔 {titre} n'est pas dans la collection de la bibliothèque: {bibliotheque.nom} !")
+                st.error(f"🤔 {titre} n'est pas dans la collection de la bibliothèque: {bibliotheque.nom} !")
 
 
 
