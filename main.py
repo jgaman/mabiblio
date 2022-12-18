@@ -8,7 +8,7 @@ import pickle
 from pathlib import Path
 
 
-st.set_page_config(page_title="My app", page_icon=":book:", layout="centered", initial_sidebar_state="auto")
+st.set_page_config(page_title="Biblio", page_icon=":book:", layout="centered", initial_sidebar_state="auto")
 
 
 
