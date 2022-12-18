@@ -230,10 +230,13 @@ class Utilisateurs:
         :rtype: Livres
         """
         for livre in bibliotheque.livres:
-            if titre in livre.titre:
-                return livre
+            if titre == livre.titre:
+                st.table(livre)
+            elif titre not in bibliotheque.livres:
+                st.write("😒 Le livre que vous chercher n'est pas disponible dans cette bibliothèque !")
             else:
-                st.error(f"🤔 {titre} n'est pas dans la collection de la bibliothèque: {bibliotheque.nom} !")
+                st.write("😒 Le livre que vous chercher n'est pas disponible dans cette bibliothèque !")
+
 
 
 

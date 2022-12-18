@@ -125,6 +125,7 @@ if authentication_status == True:
 
 #---RECHERCHER UN LIVRE---
 
+
     if menu == "Rechercher un livre":
         try:
 
