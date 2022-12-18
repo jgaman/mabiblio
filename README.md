@@ -14,7 +14,7 @@ Ce projet est une application streamlit qui permet de gérer une bibliotèque, i
 Ce projet est créé avec:
 * streamlit 1.16.0
 * streamlit-authenticator 0.1.5
-* Python 3.10.0
+* Python 3.10.6
 	
 ## Setup
 Cloner le projet et installer les dépendances comme suit:
