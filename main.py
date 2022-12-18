@@ -33,7 +33,6 @@ if authentication_status == True:
     authenticator.logout("Logout", "sidebar")
 
 
-
 #----SIDE BAR & APP----
 
     if name == "Jean":
@@ -140,13 +139,6 @@ if authentication_status == True:
                 st.success(Charpenne.livres[titre.index(search)])
             else:
                 st.error("😶‍🌫️ Ce livre n'existe pas dans la bibliothèque.")
-
-
-    if menu == "Noter un livre":
-        st.subheader("📚 Noter un livre 📚")
-
-        pass
-
 
     if menu == "Afficher les livres de la Bu":
         st.title("📚 Afficher les livres 📚")
