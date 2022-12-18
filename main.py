@@ -16,7 +16,7 @@ st.set_page_config(page_title="Biblio", page_icon=":book:", layout="centered", i
 
 names = [jean.nom, lucile.nom]
 usernames = ["Jean", "lucile"]
-passwords = [jean.password, lucile.password]
+passwords = [1234, 1234]
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as f:
     hashed_passwords = pickle.load(f)
