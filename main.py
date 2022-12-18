@@ -48,7 +48,7 @@ if authentication_status == True:
     with st.sidebar:
         st.image('https://media.istockphoto.com/id/1222800571/fr/vectoriel/illustration-plate-de-vecteur-de-pile-de-livres-manuel-ouvert.jpg?s=170667a&w=0&k=20&c=BnyVSCQvzTyfd17w6SKWcXol4wVVlr-sFeKAnOGFwAw=')
         st.title("Biblio 1.1 ")
-        menu = st.radio("📚 Menu 📚", ["Accueil", "Afficher les livres de la Bu", "Emprunter un livre","Retourner un livre", "Rechercher un livre", "Noter un livre"])
+        menu = st.radio("📚 Menu 📚", ["Accueil", "Afficher les livres de la Bu", "Emprunter un livre","Retourner un livre", "Rechercher un livre"])
         st.info("Cette application est une application de gestion de livres et de Bibliothèques!")
 
 #-----ACCUEIL-----
@@ -127,18 +127,23 @@ if authentication_status == True:
 
 
     if menu == "Rechercher un livre":
-        try:
 
-            st.title('Rechercher un livre 📚')
-            search = st.text_input('Entrer le titre du livre:')
-            name.rechercher_livre(Charpenne, search)
+        titre = [Charpenne.livres[i].titre for i in range(len(Charpenne.livres))]
+        st.title('Rechercher un livre 📚')
+        search = st.text_input('Entrer le titre du livre:')
 
-        except:
-            st.error("😶‍🌫️ Ce livre n'existe pas dans la bibliothèque.")
+        if search:
+            if search in titre:
+                st.write(f"Le livre {search} est disponible à la bibliothèque de {Charpenne.nom}")
+                st.write("Voici les informations du livre :")
+                st.success(Charpenne.livres[titre.index(search)])
+            else:
+                st.error("😶‍🌫️ Ce livre n'existe pas dans la bibliothèque.")
 
 
     if menu == "Noter un livre":
         st.subheader("📚 Noter un livre 📚")
+
         pass
 
 
@@ -151,4 +156,5 @@ if authentication_status == True:
 
 # ----END OF APP----
 #test
+
 
