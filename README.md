@@ -7,6 +7,8 @@ une application de gestion de bibliothèque
 
 ## General info
 Ce projet est une application streamlit qui permet de gérer une bibliotèque, il est intégralement codé en python.
+* Identifiant: Jean 
+* Mot de passe: 1234
 	
 ## Technologies
 Ce projet est créé avec:
@@ -17,6 +19,7 @@ Ce projet est créé avec:
 ## Setup
 Cloner le projet et installer les dépendances comme suit:
 https://github.com/jgaman/mabiblio.git
+
 
 ```
 $ cd ../mabiblio
