@@ -13,6 +13,7 @@ st.set_page_config(page_title="Biblio", page_icon=":book:", layout="centered", i
 
 
 # ----USER AUTHENTICATION----
+
 names = [jean.nom, lucile.nom]
 usernames = ["Jean", "lucile"]
 passwords = [jean.password, lucile.password]
@@ -50,17 +51,20 @@ if authentication_status == True:
         menu = st.radio("📚 Menu 📚", ["Accueil", "Afficher les livres de la Bu", "Emprunter un livre","Retourner un livre", "Rechercher un livre", "Noter un livre"])
         st.info("Cette application est une application de gestion de livres et de Bibliothèques!")
 
-
+#-----ACCUEIL-----
     if menu == "Accueil":
         st.title(f" Bienvenue à la Bibliothèque de {Charpenne}")
         st.write("Que souhaitez-vous faire ?")
         st.write("Pour cela, utilisez le menu à gauche.")
 
+
+#-----EMPRUNTER UN LIVRE-----
     if menu == "Emprunter un livre":
-        st.subheader("📚 Emprunter un Livre 📚")
+        st.title("📚 Emprunter un Livre 📚")
         st.write("Pour emprunter un livre, veuillez remplir le formulaire ci-dessous.")
 
         #afficher tous les livres de la bibliothèque
+
         titre = [Charpenne.livres[i].titre for i in range(len(Charpenne.livres))]
         choice = st.selectbox("Choisissez un livre", titre)
 
@@ -69,22 +73,28 @@ if authentication_status == True:
 
         st.write(f"Vous avez choisi le livre {choice.titre}")
         clicked = st.button("Emprunter")
-        if clicked:
+
+        if len(name.emprunts) <= 4:
+            if clicked:
             #emprunter le livre
 
             #rajouter le livre à la liste des livres empruntés
-            name.emprunter(Charpenne, choice)
-            st.write("")
+                name.emprunter(Charpenne, choice)
+                st.write("")
 
-            st.write("")
-            st.write(f"Vous avez emprunté {len(name.emprunts)} livre(s) au total.")
-            st.write("Voici la liste de vos emprunts :")
-            st.table(name.emprunts)
+                st.write("")
+                st.write(f"Vous avez emprunté {len(name.emprunts)} livre(s) au total.")
+                st.write("Voici la liste de vos emprunts :")
+                st.table(name.emprunts)
+        else:
+            st.error("😶‍🌫️ Vous avez déjà emprunté 5 livres.")
+
+#-----RETOURNER UN LIVRE-----
 
     if menu == "Retourner un livre":
         #essayer sinon afficher une erreur
         try:
-            st.subheader("📚 Retourner un Livre 📚")
+            st.title("📚 Retourner un Livre 📚")
             st.write("Pour retourner un livre, veuillez remplir le formulaire ci-dessous.")
 
             #afficher tous les livres de la bibliothèque
@@ -113,6 +123,7 @@ if authentication_status == True:
         except:
             st.error("🤐 Vous n'avez pas d'emprunts en cours. Empruntez un livre pour pouvoir le retourner.")
 
+#---RECHERCHER UN LIVRE---
 
     if menu == "Rechercher un livre":
         try:
