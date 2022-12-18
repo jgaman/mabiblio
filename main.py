@@ -63,7 +63,7 @@ if authentication_status == True:
         st.title("📚 Emprunter un Livre 📚")
         st.write("Pour emprunter un livre, veuillez remplir le formulaire ci-dessous.")
 
-        #afficher tous les livres de la bibliothèque
+        #afficher tous les titre des livres de la bibliothèque
 
         titre = [Charpenne.livres[i].titre for i in range(len(Charpenne.livres))]
         choice = st.selectbox("Choisissez un livre", titre)

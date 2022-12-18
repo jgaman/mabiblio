@@ -1,23 +1,25 @@
-# mabiblio
-une application streamlit qui permet de gérer une bibliotèque en POO python
+# Mabiblio 1.0.0    
+une application de gestion de bibliothèque
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
 ## General info
-This project is simple Lorem ipsum dolor generator.
+Ce projet est une application streamlit qui permet de gérer une bibliotèque, il est intégralement codé en python.
 	
 ## Technologies
-Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+Ce projet est créé avec:
+* streamlit 1.16.0
+* streamlit-authenticator 0.1.5
+* Python 3.10.0
 	
 ## Setup
-To run this project, install it locally using npm:
+Cloner le projet et installer les dépendances comme suit:
+https://github.com/jgaman/mabiblio.git
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+$ cd ../mabiblio
+$ pip install -r requirements.txt
+$ streamlit run main.py
+```
