@@ -1,10 +1,11 @@
+![img.png](img.png)
 # Mabiblio 1.0.0    
 une application de gestion de bibliothèque
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-![img.png](img.png)
+
 ## General info
 Ce projet est une application streamlit qui permet de gérer une bibliotèque, il est intégralement codé en python.
 * Identifiant: Jean 
