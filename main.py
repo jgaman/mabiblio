@@ -21,7 +21,7 @@ file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as f:
     hashed_passwords = pickle.load(f)
 
-authenticator = stauth.Authenticate(names, usernames, hashed_passwords,"biblio", "abcdef", cookie_expiry_days=20)
+authenticator = stauth.Authenticate(names, usernames, hashed_passwords,"mabiblio", "abcdef", cookie_expiry_days=20)
 
 name, authentication_status, username = authenticator.login("Login", "main")
 
