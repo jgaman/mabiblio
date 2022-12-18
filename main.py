@@ -30,6 +30,7 @@ if authentication_status == False:
 if authentication_status == None:
     st.warning("Please enter your username and password")
 if authentication_status == True:
+    authenticator.logout("Logout", "main")
 
 
 
