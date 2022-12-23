@@ -6,7 +6,6 @@ import streamlit as st
 import pandas as pd
 
 
-
 class Livres:
 
     """La classe `Livres` est un schéma de création d'objets représentant un livre
